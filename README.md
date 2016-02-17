@@ -12,7 +12,7 @@ ItemWithQuantity Item(id, qty);
 BigHouse.receive(Item);
 
 ASSERT_THAT(BigHouse.quantityOf(id), Eq(qty));
-ASSERT_THAT(BigHouse.locationOf(id), Eq(BigHouse.location());
+ASSERT_THAT(BigHouse.locationOf(id), IsWithin(BigHouse.location());
 ```
 
 
