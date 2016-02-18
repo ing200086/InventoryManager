@@ -1,7 +1,7 @@
 # Warehouse
 Class library to manage inventory in a warehouse.
 ## Usercase
-### Received ItemWithQuantity to Warehouse
+### Warehouse has no Locations and receives Item with Quantity
 Receiving item X with quantity Y into the warehouse increases the quantity of the item X to the original quantity plus Y. Additionally the warehouse will assign a location to the items.
 ```c++
 Warehouse _house;  // Create empty warehouse with no location map.
@@ -12,10 +12,10 @@ ItemWithQuantity Item(id, qty);
 _house.receive(Item);
 
 ASSERT_THAT(_house.quantityOf(id), Eq(qty));
-ASSERT_THAT(_house.locationOf(id), IsWithin(_house.location());
+ASSERT_THAT(_house.locationOf(id), Eq(_house.location());
 ```
 
-### Warehouse has LocationsMap and receives ItemWithQuantity
+### Warehouse has Locations and receives Item with Quantity
 ```c++
 LocationMap _map;
   _map.addLocation(new Location("Location A"));
